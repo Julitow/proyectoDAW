@@ -51,7 +51,7 @@
  *     testing
  *     production
  *
- *  SPAN!!!
+ *  SPAN!!! 2
  *
  * NOTE: If you change these, also change the error_reporting() code below
  */
