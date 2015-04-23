@@ -175,6 +175,20 @@
     }
 }
 
+
+/***************/
+/* Equipos Mac */
+/***************/
+@media screen and (min-width: 1800px){
+	#menu ul li{
+		padding-top: 0.6% !important;
+		padding-bottom: 0.6% !important;
+	}
+	#buscar{
+		margin-top: 1% !important;
+	}
+}
+
 /******************/
 /* Estilo general */
 /******************/
