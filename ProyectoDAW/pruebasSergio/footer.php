@@ -27,7 +27,7 @@
 
     <div id="cookie">
         <div>Las cookies nos permiten ofrecer nuestros servicios. Al utilizar nuestros servicios, acepta el uso que hacemos de las cookies, en cumplimiento del Real Decreto-ley 13/2012. <a href="#">Más información</a></div>
-        <button class="boton" id="pedo">Aceptar</button></div>
+        <button class="boton">Aceptar</button></div>
     </div>
 
 </div>

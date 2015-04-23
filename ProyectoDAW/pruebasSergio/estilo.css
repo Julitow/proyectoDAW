@@ -175,6 +175,40 @@
     }
 }
 
+
+/***************/
+/* Equipos Mac */
+/***************/
+@media screen and (min-width: 1800px){
+	#menu ul li{
+		padding-top: 0.6% !important;
+		padding-bottom: 0.6% !important;
+	}
+	#buscar{
+		margin-top: 1% !important;
+	}
+	#cookie div{
+		width: 50% !important;
+		margin-left: 20% !important;
+	}
+	#cookie .boton{
+		padding: 0.5% !important;
+	}
+	#video{
+		width: 70% !important;
+		margin: 0 auto !important;
+		height: 70% !important;
+	}
+	#video video{
+		width: 100% !important;
+		height: 100% !important;
+	}
+	#video #quitar{
+		margin-left: 50% !important;
+		margin-top: 1% !important;
+	}
+}
+
 /******************/
 /* Estilo general */
 /******************/
