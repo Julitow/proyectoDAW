@@ -12,7 +12,7 @@
 
             <!-- Foto nombre y apellidos -->
             <article  class="columna1">
-                    <img src="img/error404.png" class="imagenError" alt="error 404"/>
+                    <img src="<?php echo base_url() ?>/externo/img/error404.png" class="imagenError" alt="error 404"/>
             </article>
 
             <!-- Formación -->
@@ -21,7 +21,7 @@
                     <h1>D'HO! ERROR 404!</h1>
                     <h2>Página NO encontrada</h2>
                     <p>La página que buscas no ha podido ser encontrada. Disculpe las molestias.</p>
-                    <p><a href="#" class="boton">Volver al Inicio</a></p>
+                    <p><a href="<?php echo base_url() ?>" class="boton">Volver al Inicio</a></p>
                 </div>
             </article>
         </section>

@@ -17,7 +17,7 @@
             <!-- Foto nombre y apellidos -->
             <article  class="columna1">
                 <div id="perfil">
-                    <img src="img/account.png">
+                    <img src="<?php echo base_url() ?>/externo/img/account.png">
                     <div>
                         <p>Nombre</p>
                         <p>Apellidos</p>

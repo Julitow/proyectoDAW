@@ -34,5 +34,7 @@
 </body>
 
 <script type="text/javascript" src="functions.js"></script>
+<script src="jquery-ui-SOJI/external/jquery/jquery.js"></script>
+<script src="jquery-ui-SOJI/jquery-ui.js"></script>
 
 </html>

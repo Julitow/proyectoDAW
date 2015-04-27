@@ -1,4 +1,19 @@
 
+/* Expresiones regulares */
+
+var expEmail = /^([a-zA-Z\-\d]+[.]*)+@([a-zA-Z\d]+[.]*)+\.([a-zA-Z]{2,4})$/;
+var expTelefono = /^[6-9]\d{8}$/;
+
+/*
+ if(exp.test(usuario)){
+ alert("Usuario valido");
+ }else{
+ alert("Usuario NO valido");
+ }
+ */
+
+/*************************************************************************************/
+
 /* Funciones de jQuery */
 $(document).ready(function(){
 
@@ -14,7 +29,6 @@ $(document).ready(function(){
     });*/
 
 });
-
 /*************************************************************************************/
 
 /* Comprobar cookie */
@@ -108,9 +122,15 @@ $(window).scroll(function(){
     }
 });
 
+$('.item').click(function(){
+    $('.item').removeClass('active');
+    $(this).addClass('active');
+    $("#menu").load($(this).attr("id") + ".html");
+});
+
 $('#menu-responsive').on(
-    'click', function(){
-        $('#menu').toggle();
+    'click', function () {
+    $('#menu').toggle();
 });
 
 /*************************************************************************************/
@@ -124,3 +144,28 @@ $(function(){
             .next('li').fadeIn(1000)
             .end().appendTo('#imageslider .slider');}, 4000);
 });
+
+
+/* Funciones para estilo de jQueryUI */
+
+$(function() {
+
+    $( "#slider-range" ).slider({
+        range: true,
+        min: 0,
+        max: 6,
+        values: [ 0, 6],
+        slide: function( event, ui ) {
+            // aquí la función
+        }
+    });
+
+    $('.boton-2d').button();
+
+    $('.select').selectmenu();
+
+    $('#fecha-filtro').buttonset();
+
+});
+
+/*************************************************************************************/

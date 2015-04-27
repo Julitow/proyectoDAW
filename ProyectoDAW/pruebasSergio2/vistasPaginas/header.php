@@ -11,6 +11,7 @@
     <meta charset="utf-8" author="Sergio Santos & Julio Hontangas" http-equiv="content-type" content="text/html"/>
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="jquery-ui-SOJI/jquery-ui.css"/>
     <script src="jquery-2.1.3.min.js"></script>
 </head>
 

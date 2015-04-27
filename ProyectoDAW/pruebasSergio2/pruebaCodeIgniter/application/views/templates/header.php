@@ -3,9 +3,6 @@
  * Created by Sergio y Julio.
  * Date: 15/04/2015
 */
-
-/* HELPERS */
-$this->load->helper('url'); // helper para la colleción de URI
 ?>
 
 <html>
@@ -13,13 +10,14 @@ $this->load->helper('url'); // helper para la colleción de URI
     <title>SOJI - <?php echo $title ?></title>
     <meta charset="utf-8" author="Sergio Santos & Julio Hontangas" http-equiv="content-type" content="text/html"/>
     <meta name="viewport" content="width=device-width, user-scalable=no">
-    <link rel="stylesheet" type="text/css" href="<?php echo site_url("/externo/style.css"); ?>">
-    <script src="<?php echo site_url("/externo/jquery-2.1.3.min.js"); ?>"></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>/externo/style.css">
+    <link rel="stylesheet" href="<?php echo base_url() ?>/externo/jquery-ui-SOJI/jquery-ui.css"/>
+    <script src="<?php echo base_url() ?>/externo/jquery-2.1.3.min.js"></script>
 </head>
 
 <body onload="comprobarCookieVideo()">
 
-<div id="video"></div>
+<!-- <div id="video"></div> -->
 
 <div id="contenedor">
 
@@ -27,13 +25,13 @@ $this->load->helper('url'); // helper para la colleción de URI
 
         <div class="logo">
             <a href="#">
-                <img src="<?php echo site_url("/externo"); ?>/img/logo.png" alt="SOJI"/>
+                <img src="<?php echo base_url() ?>/externo/img/logo.png" alt="SOJI"/>
             </a>
         </div>
 
         <div id="login">
             <div>
-                <img src="<?php echo site_url("/externo"); ?>/img/account.png" alt="foto_perfil"/> <!-- Imagen de perfil -->
+                <img src="<?php echo base_url() ?>/externo/img/account.png" alt="foto_perfil"/> <!-- Imagen de perfil -->
                 <button class="acceder">Acceder</button>
                 <button class="registrar">Registrarse</button><!-- Botón con Registrarse / Botón con Cerrar Sesión -->
             </div>
@@ -41,14 +39,14 @@ $this->load->helper('url'); // helper para la colleción de URI
 
     </header>
 
-    <span id="menu-responsive"><img src="<?php echo site_url("/externo"); ?>/img/menu.png" alt="menú responsive"></span>
+    <span id="menu-responsive"><img src="<?php echo base_url() ?>/externo/img/menu.png"></span>
 
     <nav id="menu"><!--Menu-->
         <ul>
-            <li class='active'><a href="#">Inicio</a></li>
-            <li><a href="#">Perfil</a></li>
-            <li><a href="#">Ofertas</a></li>
-            <li><a href="#">Acerca de</a></li>
+            <a href="<?php echo base_url() ?>"><li class="item">Inicio</li></a>
+            <a href="#"><li class="item">Perfil</li></a>
+            <a href="<?php echo base_url() ?>ofertas"><li class="item">Ofertas</li></a>
+            <a href="#"><li>Acerca de</li class="item"></a>
 
             <form id="buscador" name="buscador" method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>">
                 <input id="buscar" name="buscar" type="search" placeholder="Buscar..."/>

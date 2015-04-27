@@ -51,7 +51,7 @@
             </aside>
             <aside class="columna2">
                 <div id="publi">
-                    <img src="<?php echo site_url("/externo"); ?>/img/publicidad3.jpg" alt="pubicidad Estrella Galicia"/><!-- Meter aleatorimanete un anuncio -->
+                    <img src="<?php echo base_url() ?>/externo/img/publicidad3.jpg" alt="pubicidad Estrella Galicia"/><!-- Meter aleatorimanete un anuncio -->
                 </div>
 
             </aside>

@@ -1,7 +1,7 @@
 Options +FollowSymLinks
 DirectoryIndex index.php
 RewriteEngine On
-RewriteBase /pruebaProyecto
+RewriteBase /pruebaCodeIgniter
 RewriteCond $1 !^(index\.php|images|robots\.txt)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

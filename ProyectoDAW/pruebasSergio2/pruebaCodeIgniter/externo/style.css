@@ -84,6 +84,43 @@
             height: auto !important;
         }
 
+        /* Mi perfil */
+
+        #perfil{
+            display: table-cell !important;
+            position: static !important;
+        }
+
+        /* Ofertas */
+
+        #filtrar{
+            display: table-cell;
+        }
+
+        #anos-slider span{
+            margin-left: 29px !important;
+            font-size: 16px !important;
+        }
+
+        #campos-oferta div img {
+            width: 28px !important;
+            height: 28px !important;
+        }
+
+        #campos-oferta div span{
+            font-size: 15px !important;
+        }
+
+        /* Zona de publicidad */
+
+        #columna-centrada{
+            margin: 0 auto !important;
+        }
+
+        #columna-centrada textarea{
+            max-width: 200px !important;
+        }
+
         /* Mensaje de error 404 */
 
         .imagenError{
@@ -175,7 +212,6 @@
     }
 }
 
-
 /***************/
 /* Equipos Mac */
 /***************/
@@ -207,6 +243,10 @@
 		margin-left: 50% !important;
 		margin-top: 1% !important;
 	}
+    #anos-slider span{
+        margin-left: 26.5px !important;
+        font-size: 20px !important;
+    }
 }
 
 /******************/
@@ -363,14 +403,14 @@ header{
     cursor: pointer;
 }
 
-#menu>ul>li>a {
+#menu>ul a{
     text-decoration: none;
     color: black;
     font-size: 100%;
     height: 100%;
 }
 
-#menu>ul>li:hover{
+#menu>ul li:hover{
     background-color: #1eb101;
     -webkit-transition: background-color 0.6s linear;
     -moz-transition: background-color 0.6s linear;
@@ -380,7 +420,7 @@ header{
     border-radius: 0px 0px 15px 15px;
 }
 
-#menu>ul>li:hover a{
+#menu>ul li:hover{
     color: #ffffff;
 }
 
@@ -402,7 +442,7 @@ header{
     border-top: 0px !important;
 }
 
-.fixed>ul>li:hover{
+.fixed>ul li:hover{
     border-radius: 0px !important;
 }
 
@@ -513,7 +553,7 @@ header{
 
     /* Zona de Ultimas ofertas */
 
-    /* Zona de Publicidad */
+    /* Zona de Publicidad del inicio */
 
 #publi{
     height: 100%;
@@ -566,10 +606,200 @@ header{
 
     /* Zona de Ofertas */
 
+#filtrar{
+    text-align: center;
+    width: 20%;
+    border-radius: 0px 20px 20px 0px;
+    flex: 0.2;
+    margin-top: 5%;
+    margin-right: 2%;
+    background-color: rgba(144, 144, 144, 0.32);
+    font-size: 17px;
+    font-weight: bolder;
+    height: auto;
+}
+
+#filtrar label{
+    font-size: 15px;
+    font-weight: normal;
+}
+
+#fecha-filtro{
+    display: table;
+    margin-left: 20%;
+}
+
+#fecha-filtro div{
+    display: table-row;
+    text-align: left;
+}
+
+#fecha-filtro label{
+    border-radius: 0px !important;
+}
+
+#filtrar form input{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+}
+
+#filtrar form input[type="text"]{
+    padding: 5px;
+    border: 0px;
+}
+
+#filtrar form input{
+    margin-right: 3px;
+}
+
+.boton-2d{
+    margin-top: 5px;
+    width: 50px;
+    padding: 3px !important;
+    font-size: 15px !important;
+}
+
+#ui-id-1-button{
+    width: 120px !important;
+    height: 30px !important;
+    font-size: 14px !important;
+    padding: 0px !important;
+}
+
+#slider-range{
+    margin-left: 15px;
+    height: 10px;
+    width: 80%;
+}
+
+#anos-slider{
+    text-align: left !important;
+    margin-top: 5px;
+}
+
+#anos-slider span{
+    margin-left: 8%;
+    font-style: italic;
+}
+
+.ui-slider-handle{
+    width: 20px !important;
+    height: 20px !important;
+}
+
+.oferta{
+    background-color: rgba(201, 212, 193, 0.27);
+    border-radius: 5px;
+    margin-bottom: 3%;
+    margin-right: 3%;
+}
+
+.oferta #campos-oferta{
+    display: flex;
+}
+
+.oferta #campos-oferta div{
+    display: inline;
+    flex: 2;
+}
+
+#campos-oferta div img{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.columna2 a{
+    text-decoration: none;
+    color: #000000;
+}
+
+.columna2 a:hover .oferta{
+    background-color: rgba(68, 199, 103, 0.27);
+}
+
+.oferta h3{
+    text-align: center;
+    padding: 20px;
+    font-size: 25px;
+}
+
+.oferta p{
+    padding: 20px;
+}
+
     /* Zona de Acerca de */
 
     /* Zona de Contacto */
 
+    /* Zona de Políticas de Cookies */
+
+.unica-columna{
+    display: table;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.unica-columna p strong{
+    color: #00692a;
+}
+
+.unica-columna p span{
+    color: #1eb101;
+    font-weight: bolder;
+}
+
+    /* Zona de Publicidad */
+
+#columna-centrada{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+#columna-centrada .texto-publi p{
+    font-size: 25px;
+}
+
+#columna-centrada .texto-publi li{
+    margin-top: 10px;
+}
+
+#columna-centrada form{
+    border-top: double;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-color: #44C767;
+    padding: 10px;
+    width: 70%;
+    margin: 0 auto;
+}
+
+#columna-centrada label{
+    float: left;
+    width: 15%;
+    margin-right: 2px;
+    color: #44c767;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+#columna-centrada input, #columna-centrada textarea{
+    width: 95%;
+    border: 1px solid #44C767;
+    background-color: rgba(228, 228, 228, 0.64);
+    border-radius: 5px;
+}
+
+#columna-centrada input[type=text]{
+    height: 30px;
+}
+
+#columna-centrada .boton-2d{
+    text-align: center;
+    margin-top: 5px;
+}
     /* Zona del error 404 */
 
 #contenedor .error404 h1{
@@ -740,7 +970,7 @@ header{
     -moz-box-shadow: 0px 1px 5px #666666;
     box-shadow: 2px 2px 5px #666666;
     font-family: Arial;
-    color: #ffffff;
+    color: #ffffff !important;
     font-size: 20px;
     padding: 0.8%;
     text-decoration: none;

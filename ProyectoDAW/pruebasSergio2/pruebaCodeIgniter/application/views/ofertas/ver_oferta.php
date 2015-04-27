@@ -6,9 +6,9 @@
 ?>
 
 <?php if ($oferta): ?>
-    <h1> <?php echo $oferta['nombre'] ?> </h1>
-    <p> <?php echo $oferta['descripcion'] ?> </p>
+    <h1> <?php echo $oferta->titulo ?> </h1>
+    <p> <?php echo $oferta->descripcion ?> </p>
 <?php else: ?>
     <h1> Oferna inexistente! </h1>
 <?php endif; ?>
-<p> <a href="<?php echo base_url() ?>oferta/ver_ofertas"> Volver atrás </a> </p>
+<p> <a class="boton" href="<?php echo base_url() ?>ofertas"> Volver a las ofertas </a> </p>

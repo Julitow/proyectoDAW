@@ -11,9 +11,10 @@
 
             <div>
                 <ul>
-                    <li><a href="#" target="_blank">Cookies</a></li>
-                    <li><a href="#" target="_blank">Publicidad</a></li>
-                    <li><a href="#">Contacto</a></li>
+                    <li><a href="<?php echo base_url() ?>politicasCookies" target="_blank">Cookies</a></li>
+                    <li><a href="<?php echo base_url() ?>publicidad" target="_blank">Publicidad</a></li>
+                    <li><a href="<?php echo base_url() ?>contacto">Contacto</a></li>
+
                 </ul>
             </div>
 
@@ -32,6 +33,8 @@
 </div>
 </body>
 
-<script type="text/javascript" src="<?php echo site_url("/externo/functions.js"); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url() ?>/externo/functions.js"></script>
+<script src="<?php echo base_url() ?>/externo/jquery-ui-SOJI/external/jquery/jquery.js"></script>
+<script src="<?php echo base_url() ?>/externo/jquery-ui-SOJI/jquery-ui.js"></script>
 
 </html>
