@@ -64,9 +64,9 @@ class Ofertas extends CI_Controller{
         $this->db->insert('ofertas', $nueva_oferta);
     }
 
-    public function nueva_oferta(){
+    public function nueva_oferta($titulo, $descripcion){
 
-        //crear_oferta($titulo, $descripcion);
+        crear_oferta($titulo, $descripcion);
         $data['title'] = "Nueva Oferta";
 
         $this->load->view('templates/header', $data);

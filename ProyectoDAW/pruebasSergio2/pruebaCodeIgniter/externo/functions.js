@@ -19,8 +19,7 @@ $(document).ready(function(){
 
     $('#cookie .boton').on(
             'click', function () {
-                $('#cookie').slideUp(2000);
-                politicas();
+                $('#cookie').slideUp(2000, function(){politicas();});
     })
 
     /* BUSCAR
@@ -31,20 +30,44 @@ $(document).ready(function(){
 });
 /*************************************************************************************/
 
-/* Comprobar cookie */
-var cookie = document.cookie.split("; ");
-for(i=0; i<cookie.length; i++) {
-    if (!cookie[i].search("politica")) {
+/* Comprobar cookies */
+$(document).ready(function(){
+    if(!leeCookie("video")){
+        mostrarVideo();
+    }
+    if(leeCookie("politica")){
         document.getElementById('cookie').style.display = "none";
     }
+});
+
+function leeCookie(nombre){
+    // Obtengo la cadena arrojada por document.cookies, si es nula retorno false
+    var cookies=document.cookie;
+    if(!cookies){
+        return false;
+    }
+    // Guardo en comienzo la posición del 1º caracter del nombre de la cookie que se busca
+    var comienzo=cookies.indexOf(nombre);
+    console.log(comienzo);
+    // Si la posición obtenida es inválida es porque no existe una cookie con ese nombre; se retorna false
+    if(comienzo==-1){
+        return false;}
+    // Guardo en comienzo la posición del 1º caracter del valor que pretendo retornar
+    comienzo=comienzo+nombre.length+1;
+    console.log(comienzo);
+    // Guardo en cantidad la cantidad de caracteres de largo que posee el valor a retornar
+    cantidad=cookies.indexOf("; ", comienzo)-comienzo;
+    if(cantidad<=0)cantidad=cookies.length;
+    // Fracciono la cadena para retornar solo el valor de la cookie de interés
+    return cookies.substr(comienzo, cantidad);
 }
 /*************************************************************************************/
 
-/* AJAX */
-var conexion;
-
 // Cookie de politicas
 function politicas() {
+    var date = new Date()
+    date.setTime(date.getTime()+(365*24*60*60*1000));
+    document.cookie="politica=esta COOKIE incluye la confirmación de las politicas de privacidad del sitio web www.SOJI.es; expires="+date.toGMTString();
     conexion = new XMLHttpRequest();
     conexion.open('GET', 'cookies.php?politica=politica', true);
     conexion.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
@@ -56,17 +79,6 @@ function politicas() {
     }
 }
 
-function comprobarCookieVideo() {
-		conexion = new XMLHttpRequest();
-		conexion.open('GET', 'cookies.php?video=video', true);
-		conexion.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-		conexion.send();
-		conexion.onreadystatechange = function() {
-			if (conexion.readyState==4 && conexion.status==200) {
-                mostrarVideo();
-			}
-		}
-}
 /*************************************************************************************/
 
 /* Funciones para el video */
@@ -83,7 +95,10 @@ function deshabilitarContenedor(){
 }
 
 function mostrarVideo() {
-    texto = conexion.responseText;
+    texto = '<video autoplay preload width="640" height="360">' +
+    '<source src="http://localhost/pruebaCodeIgniter/externo/video/video.mp4" type="video/mp4"/>'+
+    '</video>'+
+    '<input id="quitar" type="button" value="Skip" onclick="eliminarVideo()"/>';
     document.getElementById('video').innerHTML = texto;
     if(document.getElementById('quitar').value=="Skip"){
         document.getElementById('contenedor').style.opacity = 0.1;
@@ -94,6 +109,9 @@ function mostrarVideo() {
 }
 
 function eliminarVideo(){
+    var date = new Date()
+    date.setTime(date.getTime()+(365*24*60*60*1000))
+    document.cookie="video=esta COOKIE incluye la confirmación de las politicas de privacidad del sitio web www.SOJI.es; expires="+date.toGMTString();
     document.onmousedown = function(){
         return true;
     }
@@ -122,10 +140,23 @@ $(window).scroll(function(){
     }
 });
 
-$('.item').click(function(){
-    $('.item').removeClass('active');
-    $(this).addClass('active');
-    $("#menu").load($(this).attr("id") + ".html");
+$(document).ready(function() {
+        var pathname = window.location.pathname; //Obtener la URL
+        var element = pathname.split("/"); // Separamos la URL "/"
+        var array = $('#menu ul a li'); // Todos los "li" del menú
+
+        $.each(array, function() { // Recorremos todos los "li"
+            // element[2] obtiene el controlador de CodeIgniter
+            if(element[2] == $(this).html().toLowerCase()){
+                // Si el controlador tiene el mismo texto que el "li" se le añade la clase "active"
+                $(this).addClass('active');
+            }
+            // Si el controlador está vacío (home), se le añade al "li" de "Inicio"
+            else if(element[2] == ""){
+                $('#menu ul a li').eq(0).addClass('active');
+            };
+        });
+
 });
 
 $('#menu-responsive').on(

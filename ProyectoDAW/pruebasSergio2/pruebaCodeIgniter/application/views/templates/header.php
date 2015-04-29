@@ -17,14 +17,14 @@
 
 <body onload="comprobarCookieVideo()">
 
-<!-- <div id="video"></div> -->
+<div id="video"></div>
 
 <div id="contenedor">
 
     <header><!--Cabecera principal del sitio-->
 
         <div class="logo">
-            <a href="#">
+            <a href="<?php echo base_url() ?>">
                 <img src="<?php echo base_url() ?>/externo/img/logo.png" alt="SOJI"/>
             </a>
         </div>
@@ -43,10 +43,10 @@
 
     <nav id="menu"><!--Menu-->
         <ul>
-            <a href="<?php echo base_url() ?>"><li class="item">Inicio</li></a>
-            <a href="#"><li class="item">Perfil</li></a>
-            <a href="<?php echo base_url() ?>ofertas"><li class="item">Ofertas</li></a>
-            <a href="#"><li>Acerca de</li class="item"></a>
+            <a href="<?php echo base_url() ?>"><li>Inicio</li></a>
+            <a href="<?php echo base_url() ?>perfil"><li>Perfil</li></a>
+            <a href="<?php echo base_url() ?>ofertas"><li>Ofertas</li></a>
+            <a href="<?php echo base_url() ?>contacto"><li>Contacto</li></a>
 
             <form id="buscador" name="buscador" method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>">
                 <input id="buscar" name="buscar" type="search" placeholder="Buscar..."/>

@@ -47,14 +47,24 @@
 
                 <a href="<?php echo base_url() . 'ofertas/ver_oferta/' . $item->id ?>"><div class="oferta">
                         <h3><?php echo $item->titulo ?></h3>
-                        <!-- Campos opcionales -->
                         <div id="campos-oferta">
                             <div class="provincia"><img src="<?php echo base_url()?>/externo/img/site.png"/><span>Provincia</span></div>
-                            <div class="salario"><img src="<?php echo base_url()?>/externo/img/money.png"/><span>Salario</span></div>
-                            <div class="experiencia"><img src="<?php echo base_url()?>/externo/img/experience.png"/><span>Experiencia</span></div>
-                            <div class="lenguaje"><img src="<?php echo base_url()?>/externo/img/language.png"/><span>Idioma</span></div>
+                            <?php if ($item->salario): ?>
+                            <div class="salario">
+                                    <img src="<?php echo base_url()?>/externo/img/money.png"/><span><?php echo $item->salario?>€ mensuales</span>
+                            </div>
+                            <?php endif; ?>
+                            <?php if ($item->experiencia): ?>
+                            <div class="experiencia">
+                                    <img src="<?php echo base_url()?>/externo/img/experience.png"/><span><?php echo $item->experiencia?> años</span>
+                            </div>
+                            <?php endif; ?>
+                            <?php if ($item->idiomas): ?>
+                            <div class="lenguaje">
+                                    <img src="<?php echo base_url()?>/externo/img/language.png"/><span><?php echo $item->idiomas?></span>
+                            </div>
+                            <?php endif; ?>
                         </div>
-                        <p><?php echo $item->descripcion ?></p>
                 </div></a>
 
                 <?php endforeach; ?>

@@ -37,6 +37,10 @@
     }
     #menu ul li{
         float: none !important;
+        padding-left: 7px !important;
+        padding-right: 7px !important;
+        padding-bottom: 4px !important;
+        padding-top: 4px !important;
     }
     #menu ul li:hover{
         border-radius: 0% !important;
@@ -109,6 +113,17 @@
 
         #campos-oferta div span{
             font-size: 15px !important;
+        }
+
+        /* Descripcion de una oferta */
+
+        #contenido-oferta{
+            width: 95% !important;
+            margin-left: 4% !important;
+        }
+
+        #contenido-oferta .boton2{
+            margin-left: 2% !important;
         }
 
         /* Zona de publicidad */
@@ -380,6 +395,7 @@ header{
 #menu{
     width: 100%;
     height: 3.2em;
+    min-height: 3.2em;
     border-top: 4px solid #1eb101;
     clear: both;
 }
@@ -396,10 +412,10 @@ header{
     height: auto;
     float: left;
     list-style: none;
-    padding-right: 1.5%;
-    padding-left: 1.5%;
-    padding-top: 1%;
-    padding-bottom: 1%;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 11px;
+    padding-top: 11px;
     cursor: pointer;
 }
 
@@ -417,16 +433,13 @@ header{
     -ms-transition: background-color 0.6s linear;
     -o-transition: background-color 0.6s linear;
     transition: background-color 0.6s linear;
-    border-radius: 0px 0px 15px 15px;
-}
-
-#menu>ul li:hover{
     color: #ffffff;
+
 }
 
 .active{
+    color: #ffffff;
     background-color: #1eb101;
-    border-radius: 0px 0px 15px 15px;
 }
 
 .active>a{
@@ -698,6 +711,7 @@ header{
 
 .oferta #campos-oferta{
     display: flex;
+    padding: 20px;
 }
 
 .oferta #campos-oferta div{
@@ -730,7 +744,39 @@ header{
     padding: 20px;
 }
 
-    /* Zona de Acerca de */
+    /* Zona de la descripción de una oferta */
+
+#contenido-oferta {
+    margin: 0 auto;
+    height: auto;
+    width: 50%;
+}
+
+.fila-1 h1{
+    font-size: 40px;
+}
+
+.fila-2 ul{
+    list-style-image: url("img/star-list.png");
+}
+
+.lista li{
+    margin-top: 10px;
+}
+
+.lista span{
+    color: #00692a;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.fila-3{
+    padding: 20px;
+}
+
+.fila-3 .boton2{
+    margin-left: 20%;
+}
 
     /* Zona de Contacto */
 
@@ -822,7 +868,7 @@ header{
 
 /*************************************************************************************/
 
-/* Estilo del footer */
+/* Estilo del r */
 
 #footer{
     width: 100%;
@@ -963,9 +1009,9 @@ header{
     background-image: -ms-linear-gradient(top, #34d97b, #00b51b);
     background-image: -o-linear-gradient(top, #34d97b, #00b51b);
     background-image: linear-gradient(to bottom, #34d97b, #00b51b);
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    border-radius: 8px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
     -webkit-box-shadow: 0px 1px 5px #666666;
     -moz-box-shadow: 0px 1px 5px #666666;
     box-shadow: 2px 2px 5px #666666;
@@ -974,12 +1020,36 @@ header{
     font-size: 20px;
     padding: 0.8%;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .boton:hover {
     background: #008f43;
     text-decoration: none;
 }
+
+.boton2 {
+    background: #ffffff;
+    background-image: -webkit-linear-gradient(top, #ffffff, rgba(216, 217, 212, 0.45));
+    background-image: -moz-linear-gradient(top, #ffffff, rgba(216, 217, 212, 0.45));
+    background-image: -ms-linear-gradient(top, #ffffff, rgba(216, 217, 212, 0.45));
+    background-image: -o-linear-gradient(top, #ffffff, rgba(216, 217, 212, 0.45));
+    background-image: linear-gradient(to bottom, #ffffff, rgba(216, 217, 212, 0.45));
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 2px #ffffff solid;
+    font-family: Arial;
+    color: #00b51b !important;
+    font-size: 20px;
+    padding: 0.8%;
+    text-decoration: none;
+}
+
+.boton2:hover{
+    border: solid 2px #00b51b;
+}
+
 
 #cookie div{
     display: block;
