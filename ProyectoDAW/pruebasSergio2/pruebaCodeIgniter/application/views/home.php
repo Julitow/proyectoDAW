@@ -42,16 +42,43 @@
 
         <section class="dos-columnas">
             <aside class="columna1">
-                <h1>Ultimas Ofertas</h1>
+                <h1>Últimas Ofertas</h1>
+
                 <!-- Incluir ofertas.php las tres o x ultimas ofertas -->
-                <p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
-                <p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
-                <p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
-                <p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+                <?php foreach ($lista as $item): ?>
+                    <a href="<?php echo base_url() . 'ofertas/ver_oferta/' . $item->idOferta ?>"><div class="oferta">
+                            <h3><?php echo $item->titulo ?></h3>
+                            <div id="campos-oferta">
+                                <?php if ($item->provincia): ?>
+                                    <div class="provincia">
+                                        <img src="<?php echo base_url()?>/externo/img/site.png"/><span><?php echo $item->provincia?></span>
+                                    </div>
+                                <?php endif; ?>
+                                <?php if ($item->salario): ?>
+                                    <div class="salario">
+                                        <img src="<?php echo base_url()?>/externo/img/money.png"/><span><?php echo $item->salario?></span>
+                                    </div>
+                                <?php endif; ?>
+                                <?php if ($item->experiencia): ?>
+                                    <div class="experiencia">
+                                        <img src="<?php echo base_url()?>/externo/img/experience.png"/><span><?php echo $item->experiencia." años"?></span>
+                                    </div>
+                                <?php endif; ?>
+                                <?php if ($item->idiomas): ?>
+                                    <div class="lenguaje">
+                                        <img src="<?php echo base_url()?>/externo/img/language.png"/><span><?php echo $item->idiomas?></span>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                        </div></a>
+                <?php endforeach; ?>
+                <div class="fila-3">
+                    <a class="boton" href="<?php echo base_url() ?>ofertas"> Ver más ofertas</a>
+                </div>
             </aside>
             <aside class="columna2">
                 <div id="publi">
-                    <img src="<?php echo base_url() ?>/externo/img/publicidad3.jpg" alt="pubicidad Estrella Galicia"/><!-- Meter aleatorimanete un anuncio -->
+                    <img src="<?php echo base_url()?>externo/img/publicidad<?php echo $publi?>.jpg" alt="pubicidad Estrella Galicia"/><!-- Meter aleatorimanete un anuncio -->
                 </div>
 
             </aside>

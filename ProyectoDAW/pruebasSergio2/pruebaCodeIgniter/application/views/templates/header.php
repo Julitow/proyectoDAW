@@ -12,10 +12,11 @@
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>/externo/style.css">
     <link rel="stylesheet" href="<?php echo base_url() ?>/externo/jquery-ui-SOJI/jquery-ui.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Maven+Pro:500' rel='stylesheet' type='text/css'>
     <script src="<?php echo base_url() ?>/externo/jquery-2.1.3.min.js"></script>
 </head>
 
-<body onload="comprobarCookieVideo()">
+<body>
 
 <div id="video"></div>
 

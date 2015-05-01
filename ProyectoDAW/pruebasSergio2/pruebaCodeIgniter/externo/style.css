@@ -102,7 +102,7 @@
         }
 
         #anos-slider span{
-            margin-left: 29px !important;
+            margin-left: 27px !important;
             font-size: 16px !important;
         }
 
@@ -124,6 +124,10 @@
 
         #contenido-oferta .boton2{
             margin-left: 2% !important;
+        }
+
+        #map-canvas{
+            width: 90% !important;
         }
 
         /* Zona de publicidad */
@@ -272,6 +276,7 @@ body{
     background: url("img/fondo_body.png");
     margin: 0px;
     outline: none;
+    font-family: 'Maven Pro', sans-serif;
 }
 
 #contenedor{
@@ -558,8 +563,25 @@ header{
 .columna1, .columna2{
     text-align: center;
     width: 20%;
+    margin: 2%;
+}
+
+.columna1{
+    flex: 3;
+}
+
+.columna2{
     flex: 1;
-    margin-top: 5%;
+}
+
+.columna1 *{
+    list-style: none;
+    text-decoration:none;
+    color: #000000;
+}
+
+.columna1 a:hover .oferta{
+    background-color: rgba(68, 199, 103, 0.27);
 }
 
     /* Zona de Descripción */
@@ -569,8 +591,11 @@ header{
     /* Zona de Publicidad del inicio */
 
 #publi{
-    height: 100%;
+    margin-top: 10%;
+    height: 90%;
     width: 100%;
+    background-color: rgba(30, 177, 1, 0.30);
+    border-radius: 5px;
 }
 
 #publi img{
@@ -667,6 +692,10 @@ header{
     margin-right: 3px;
 }
 
+.select{
+    height: 200px !important;
+}
+
 .boton-2d{
     margin-top: 5px;
     width: 50px;
@@ -693,7 +722,7 @@ header{
 }
 
 #anos-slider span{
-    margin-left: 8%;
+    margin-left: 7%;
     font-style: italic;
 }
 
@@ -778,6 +807,12 @@ header{
     margin-left: 20%;
 }
 
+#map-canvas{
+    height: 70% !important;
+    border-radius: 10px;
+    box-shadow: #acacac 5px 5px 10px;
+}
+
     /* Zona de Contacto */
 
     /* Zona de Políticas de Cookies */
@@ -848,16 +883,24 @@ header{
 }
     /* Zona del error 404 */
 
-#contenedor .error404 h1{
+#contenido-error{
+    height: auto;
+}
+
+#contenido-error .columna1, #contenido-error .columna2{
+    flex: 1;
+}
+
+.error404 h1{
     color: rgba(203, 24, 19, 1.0) !important;
     font-size: 90px;
 }
 
-#contenedor .error404 h2{
+.error404 h2{
     font-size: 50px;
 }
 
-#contenedor .error404 p{
+.error404 p{
     margin-top: 5%;
 }
 
@@ -941,6 +984,11 @@ header{
     left: 25%;
     top: 20%;
     z-index: -100000;
+    display: table;
+}
+
+video{
+    border-radius: 10px;
 }
 
 #quitar{
@@ -950,9 +998,9 @@ header{
     background-image: -ms-linear-gradient(top, #adadad, #575757);
     background-image: -o-linear-gradient(top, #adadad, #575757);
     background-image: linear-gradient(to bottom, #adadad, #575757);
-    -webkit-border-radius: 28px;
-    -moz-border-radius: 28px;
-    border-radius: 28px;
+    -webkit-border-radius: 17px;
+    -moz-border-radius: 17px;
+    border-radius: 17px;
     text-shadow: 2px 1px 7px #035206;
     -webkit-box-shadow: 5px 2px 2px #5e5e5e;
     -moz-box-shadow: 5px 2px 2px #5e5e5e;
@@ -962,7 +1010,6 @@ header{
     font-size: 26px;
     padding: 4px 16px 7px 20px;
     text-decoration: none;
-    margin-left: 10px;
 }
 
 #quitar:hover{
@@ -988,7 +1035,7 @@ header{
     border-top-color: rgba(9, 127, 0, 0.89);
     position: fixed;
     bottom: 0%;
-    background-color: rgba(227, 228, 226, 0.75);
+    background-color: rgba(194, 196, 194, 1.0) !important;
     border-radius: 15px 15px 0px 0px;
     padding-left: 2%;
     padding-top: 1%;

@@ -10,19 +10,25 @@ class Model_oferta extends CI_Model {
         parent::__construct();
     }
 
-    public function crear_oferta($titulo, $descripcion){
+    public function crear_oferta($titulo, $descripcion, $fecha, $salario, $idiomas, $experiencia, $idCliente, $provincia){
 
-        $ofertaNueva = array(
+        $nueva_oferta = array(
             'titulo' => $titulo,
-            'descripcion' => $descripcion
+            'descripcion' => $descripcion,
+            'fecha' => $fecha,
+            'salario' => $salario,
+            'idiomas' => $idiomas,
+            'experiencia' => $experiencia,
+            'idCliente' => $idCliente,
+            'provincia' => $provincia
         );
 
-        $this->db->insert('ofertas', $ofertaNueva);
+        $this->db->insert('ofertas', $nueva_oferta);
 
     }
 
     public function eliminar_oferta($id){
-        $this->db->where('id', $id);
+        $this->db->where('idOferta', $id);
         $this->db->delete('ofertas');
     }
 
@@ -31,7 +37,21 @@ class Model_oferta extends CI_Model {
 
         $this->db->select('*');
         $this->db->from('ofertas');
-        $this->db->order_by('id', 'desc');
+        $this->db->order_by('idOferta', 'desc');
+
+        $consulta = $this->db->get();
+        $resultado = $consulta->result();
+
+        return $resultado;
+    }
+
+    // SELECT * FROM ofertas ORDER BY id DESC LIMIT 4;
+    public function ver_cuatro_ultimas_ofertas(){
+
+        $this->db->select('*');
+        $this->db->from('ofertas');
+        $this->db->order_by('idOferta', 'desc');
+        $this->db->limit(4);
 
         $consulta = $this->db->get();
         $resultado = $consulta->result();
@@ -44,7 +64,7 @@ class Model_oferta extends CI_Model {
 
         $this->db->select('*');
         $this->db->from('ofertas');
-        $this->db->where('id', $id);
+        $this->db->where('idOferta', $id);
 
         $consulta = $this->db->get();
         $resultado = $consulta->row();
@@ -52,4 +72,14 @@ class Model_oferta extends CI_Model {
         return $resultado;
     }
 
+    // SELECT COUNT(*) FROM ofertas;
+    public function contar_ofertas(){
+        $this->db->select('*');
+        $this->db->from('ofertas');
+
+        $consulta = $this->db->get();
+        $rowcount = $consulta->num_rows();
+
+        return $rowcount;
+    }
 }

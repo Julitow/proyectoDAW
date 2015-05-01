@@ -19,13 +19,14 @@ $(document).ready(function(){
 
     $('#cookie .boton').on(
             'click', function () {
-                $('#cookie').slideUp(2000, function(){politicas();});
+                $('#cookie').slideUp(1000, function(){politicas();});
     })
 
-    /* BUSCAR
-    $("#as").on('ended', function(){
-        alert('El video ha finalizado!!!');
-    });*/
+    $(document).ready(function(){
+        $("video").on('ended', function(){
+            eliminarVideo();
+        });
+    });
 
 });
 /*************************************************************************************/
@@ -48,13 +49,11 @@ function leeCookie(nombre){
     }
     // Guardo en comienzo la posición del 1º caracter del nombre de la cookie que se busca
     var comienzo=cookies.indexOf(nombre);
-    console.log(comienzo);
     // Si la posición obtenida es inválida es porque no existe una cookie con ese nombre; se retorna false
     if(comienzo==-1){
         return false;}
     // Guardo en comienzo la posición del 1º caracter del valor que pretendo retornar
     comienzo=comienzo+nombre.length+1;
-    console.log(comienzo);
     // Guardo en cantidad la cantidad de caracteres de largo que posee el valor a retornar
     cantidad=cookies.indexOf("; ", comienzo)-comienzo;
     if(cantidad<=0)cantidad=cookies.length;
@@ -96,7 +95,11 @@ function deshabilitarContenedor(){
 
 function mostrarVideo() {
     texto = '<video autoplay preload width="640" height="360">' +
-    '<source src="http://localhost/pruebaCodeIgniter/externo/video/video.mp4" type="video/mp4"/>'+
+    '<source src="./externo/video/video.webm" type="video/webm"/>'+
+    '<source src="./externo/video/video.mp4" type="video/mp4"/>'+
+    '<source src="./externo/video/video.flv" type="video/fvl"/>'+
+    '<source src="./externo/video/video.avi" type="video/avi"/>'+
+    '<source src="./externo/video/video.swf" type="video/swf"/>'+
     '</video>'+
     '<input id="quitar" type="button" value="Skip" onclick="eliminarVideo()"/>';
     document.getElementById('video').innerHTML = texto;
@@ -111,7 +114,7 @@ function mostrarVideo() {
 function eliminarVideo(){
     var date = new Date()
     date.setTime(date.getTime()+(365*24*60*60*1000))
-    document.cookie="video=esta COOKIE incluye la confirmación de las politicas de privacidad del sitio web www.SOJI.es; expires="+date.toGMTString();
+    document.cookie="video=esta COOKIE indica que ya has visualizado el vide de introddución de nuestra web www.SOJI.es; expires="+date.toGMTString();
     document.onmousedown = function(){
         return true;
     }
@@ -176,7 +179,6 @@ $(function(){
             .end().appendTo('#imageslider .slider');}, 4000);
 });
 
-
 /* Funciones para estilo de jQueryUI */
 
 $(function() {
@@ -193,7 +195,7 @@ $(function() {
 
     $('.boton-2d').button();
 
-    $('.select').selectmenu();
+    $('.select').selectmenu().selectmenu("menuWidget").addClass( "select" );
 
     $('#fecha-filtro').buttonset();
 

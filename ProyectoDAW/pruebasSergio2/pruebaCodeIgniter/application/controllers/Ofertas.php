@@ -12,12 +12,16 @@ class Ofertas extends CI_Controller{
     public function index(){
 
         $this->load->model('model_oferta');
-        $ofertas['lista'] = $this->model_oferta->ver_ofertas();
+        $parametros['lista'] = $this->model_oferta->ver_ofertas();
+        $parametros['numero'] = $this->model_oferta->contar_ofertas();
+
+        $this->load->model('model_provincia');
+        $parametros['provincia'] = $this->model_provincia->ver_provincias();
 
         $data['title'] = "Ofertas de Trabajo";
 
         $this->load->view('templates/header', $data);
-        $this->load->view('ofertas/ver_ofertas', $ofertas);
+        $this->load->view('ofertas/ver_ofertas', $parametros);
         $this->load->view('templates/footer');
 
     }
@@ -29,7 +33,7 @@ class Ofertas extends CI_Controller{
         $this->load->model('model_oferta');
         $oferta = $this->model_oferta->ver_oferta($id);
 
-            if($oferta->id == $id){
+            if($oferta->idOferta == $id){
                 $sol = $oferta;
             }
 
@@ -42,6 +46,9 @@ class Ofertas extends CI_Controller{
         $data['title'] = "No existe la oferta";
         $oferta['oferta'] = $this->buscar_oferta($id);
 
+        $this->load->model('model_cliente');
+        $oferta['cliente'] = $this->model_cliente->ver_cliente_por_oferta($id);
+
         if($oferta){
             $data['title'] = $oferta['oferta']->titulo;
         }
@@ -53,24 +60,23 @@ class Ofertas extends CI_Controller{
     }
 
     // Funcion que crea una nueva oferta
-    private function crear_oferta($titulo, $descripcion){
+    private function crear_oferta($titulo, $descripcion, $fecha, $salario, $idiomas, $experiencia, $idCliente){
+
+        $this->load->model('model_cliente');
+        $cliente['cliente'] = $this->model_cliente->ver_cliente($idCliente);
 
         $this->load->model('model_oferta');
-        $nueva_oferta = array(
-            'titulo' => $titulo,
-            'descripcion' => $descripcion
-        );
+        $this->model_oferta->crear_oferta($titulo, $descripcion, $fecha, $salario, $idiomas, $experiencia, $idCliente, $cliente['provincia']);
 
-        $this->db->insert('ofertas', $nueva_oferta);
     }
 
-    public function nueva_oferta($titulo, $descripcion){
+    public function nueva_oferta($titulo, $descripcion, $fecha, $salario, $idiomas, $experiencia, $idCliente){
 
-        crear_oferta($titulo, $descripcion);
+        $oferta = crear_oferta($titulo, $descripcion, $fecha, $salario, $idiomas, $experiencia, $idCliente);
         $data['title'] = "Nueva Oferta";
 
         $this->load->view('templates/header', $data);
-        $this->load->view('ofertas/oferta_creada', $ofertas);
+        $this->load->view('ofertas/oferta_creada', $oferta);
         $this->load->view('templates/footer');
     }
 }

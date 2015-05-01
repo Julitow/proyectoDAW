@@ -20,7 +20,7 @@
 
         </div>
         <div id="footer-copyright">
-            <p>Copyright © 2015 SOJI | Todos los derechos reservados.</p>
+            <p>Copyright © 2015 SOJI | Todos los derechos reservados</p>
         </div>
 
     </footer>

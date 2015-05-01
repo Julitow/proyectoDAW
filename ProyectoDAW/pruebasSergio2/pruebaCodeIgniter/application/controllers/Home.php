@@ -10,12 +10,17 @@ class Home extends CI_Controller {
 
     public function index($page = "home"){
 
+        $this->load->model('model_oferta');
+        $parametros['lista'] = $this->model_oferta->ver_cuatro_ultimas_ofertas();
+        // rand(min, max) --> generar un número aleatorio para que el banner publicitario cambie
+        $parametros['publi'] = rand(1,6);
+
         // $data['title'] --> Inidica el título de la página = <title>$title</title>
         $data['title'] = ucfirst($page); // ucfirst(String) --> Transforma la primera letra en mayúscula
 
         $this->load->view('templates/header', $data);
-        $this->load->view($page, $data);
-        $this->load->view('templates/footer', $data);
+        $this->load->view($page, $parametros);
+        $this->load->view('templates/footer');
 
     }
 }

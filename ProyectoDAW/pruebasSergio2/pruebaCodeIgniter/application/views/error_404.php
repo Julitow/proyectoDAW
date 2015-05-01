@@ -5,8 +5,7 @@
 ?>
 
     <!--Contenido general-->
-    <div id="contenido">
-        <h1></h1>
+    <div id="contenido-error">
         <!--Descripción del sitio -->
         <section class="dos-columnas">
 
