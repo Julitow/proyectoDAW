@@ -1,24 +1,24 @@
 <?php
 /**
  * Created by Sergio y Julio.
- * Date: 28/04/2015
+ * Date: 24/04/2015
  */
 
 if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Publicidad extends CI_Controller{
+class Contacto extends CI_Controller {
 
     public function __construct(){
-        parent::__construct();
-        $this->load->library('session');
+	        parent::__construct();
+	        $this->load->library('session');
     }
 
     public function index(){
 
-        $data['title'] = "Publicidad";
+        $data['title'] = "Contacto";
 
         $this->load->view('templates/header', $data);
-        $this->load->view('publicidad');
+        $this->load->view('contacto');
         $this->load->view('templates/footer');
 
     }
@@ -43,7 +43,7 @@ class Publicidad extends CI_Controller{
         $this->email->from($this->input->post("email"), $this->input->post("nombre"));
         $this->email->to('proyectosoji@gmail.com');
 
-        $this->email->subject('Notificación de Publicidad');
+        $this->email->subject('Mensaje de Contacto');
 
         $this->email->message("Email de ".$this->input->post("email")." <br/><br/>Mensaje: ".$this->input->post("comentarios"));
 
@@ -53,7 +53,9 @@ class Publicidad extends CI_Controller{
             $this->session->set_flashdata('envio', '<div class="fracaso"><h2>ERROR! No se a podido enviar el email. Inténtelo de nuevo</h2></div>');
         }
 
-        redirect(base_url("publicidad"));
-    }
+        redirect(base_url("contacto"));
 
+    }
 }
+
+?>

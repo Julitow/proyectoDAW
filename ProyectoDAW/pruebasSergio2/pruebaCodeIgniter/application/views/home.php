@@ -24,19 +24,24 @@
     <div id="contenido">
         <!--Descripción del sitio -->
         <section class="una-columna">
-            <article>
-                <h1>Lorem imp?</h1>
-                <!-- Incluir aboutUs.php -->
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+            <article id="intro">
+                <h1>¿Por qué SOJI?</h1>
+                <div class="desc-intro">
+                    <div class="imagen"><img src="<?php echo base_url()?>/externo/img/home1.png"></div>
+                    <div class="texto"><h2>Es el buscador con <span>más usuarios registrados</span> de toda España</h2></div>
+                </div>
+                <div class="desc-intro">
+                    <div class="texto"><h2>El <span>más veloz</span> a la hora de recibir todas tus notificaciones</h2></div>
+                    <div class="imagen"><img src="<?php echo base_url()?>/externo/img/home2.png"></div>
+                </div>
+                <div class="desc-intro">
+                    <div class="imagen"><img src="<?php echo base_url()?>/externo/img/home3.png"></div>
+                    <div class="texto"><h2>Nuestra web es <span>adaptable a todos tus dispositivos</span></h2></div>
+                </div>
+                <div class="desc-intro">
+                    <div class="texto"><h2>Si tienes algún problema, puedes <span>contactar con nosotros</span></h2></div>
+                    <div class="imagen"><img src="<?php echo base_url()?>/externo/img/home4.png"></div>
+                </div>
             </article>
         </section>
 

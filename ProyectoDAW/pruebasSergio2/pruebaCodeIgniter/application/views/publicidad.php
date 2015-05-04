@@ -9,6 +9,8 @@
 
     <!--Contenido general-->
     <div id="contenido">
+        <?php if($this->session->flashdata('envio')){ echo $this->session->flashdata('envio'); }?>
+
         <h1>Publicidad</h1>
 
         <!--Descripción del sitio -->
@@ -37,11 +39,14 @@
                 <div class="formulario-contacto">
                     <p>Si quieres publicitarte con nosotros, rellene el siguiente <span>formulario</span>:</p>
                     <!-- Formulario con campo de nombre, email, telefono y textarea comentarios -->
-                    <form id="form-contacto" action="#" method="post">
-                        <div><label for="nombre">Nombre: </label><input id="nombre" type="text" name="nombre"/></div>
-                        <div><label for="nombre">Email: </label><input id="nombre" type="text" name="nombre"/></div>
-                        <div><label for="nombre">Comentarios: </label><textarea rows="5" cols="30" placeholder="Escriba aquí su consulta"></textarea></div>
-                        <input type="button" class="boton-2d" value="Enviar"/>
+                    <form id="form-contacto" name="contacto" action="<?=base_url("publicidad/enviar")?>" method="post" onsubmit="return formPubli()">
+                        <div><label for="nombre">Nombre: </label><input id="nombre" type="text" name="nombre" onkeyup="quitarError(this)"/></div>
+                        <div id="errornombre" class="error"></div>
+                        <div><label for="email">Email: </label><input id="email" type="text" name="email" onkeyup="quitarError(this)"/></div>
+                        <div id="erroremail" class="error"></div>
+                        <div><label for="comentarios">Comentarios: </label><textarea id="comentarios" name="comentarios" rows="5" cols="30" placeholder="Escriba aquí su consulta" onkeyup="quitarError(this)"></textarea></div>
+                        <div id="errorcomentarios" class="error"></div>
+                        <input type="submit" class="boton-2d" value="Enviar"/>
                     </form>
                 </div>
 

@@ -8,6 +8,11 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 class Perfil extends CI_Controller{
 
+    function __construct(){
+        parent::__construct();
+        $this->load->model('model_cliente');
+    }
+
     public function index(){
 
         // if(se ha iniciado una sesion){ mostrar datos usario } else { formulario de inicar sesión }

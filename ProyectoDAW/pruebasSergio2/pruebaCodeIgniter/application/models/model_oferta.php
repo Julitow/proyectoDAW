@@ -45,13 +45,13 @@ class Model_oferta extends CI_Model {
         return $resultado;
     }
 
-    // SELECT * FROM ofertas ORDER BY id DESC LIMIT 4;
+    // SELECT * FROM ofertas ORDER BY id DESC LIMIT 3;
     public function ver_cuatro_ultimas_ofertas(){
 
         $this->db->select('*');
         $this->db->from('ofertas');
         $this->db->order_by('idOferta', 'desc');
-        $this->db->limit(4);
+        $this->db->limit(3);
 
         $consulta = $this->db->get();
         $resultado = $consulta->result();

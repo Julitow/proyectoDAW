@@ -86,6 +86,29 @@
 
         #publi img{
             height: auto !important;
+            margin-top: 0% !important;
+        }
+
+        .desc-intro:nth-child(2n+1){
+            flex-flow: column-reverse !important;
+        }
+
+        .desc-intro:nth-child(2n){
+            flex-flow: column !important;
+        }
+
+        .desc-intro *{
+            margin: 10px !important;
+        }
+
+        .desc-intro .imagen{
+            border-radius: 100% !important;
+            width: 70% !important;
+            border-style: ridge !important;
+        }
+
+        .desc-intro h2{
+            font-size: 17px !important;
         }
 
         /* Mi perfil */
@@ -130,6 +153,33 @@
             width: 90% !important;
         }
 
+        /* Contacto */
+
+        #contacto #form-contacto{
+            width: 95% !important;
+        }
+
+        #columna-centrada #contacto textarea{
+            max-width: 250px !important;
+            min-width: 240px !important;
+        }
+
+        .exito{
+            width: 95% !important;
+            height: 15% !important;
+            font-size: 15px !important;
+        }
+
+        .exito span{
+            font-size: 30px !important;
+        }
+
+        .fracaso{
+            width: 95% !important;
+            height: 20% !important;
+            font-size: 15px !important;
+        }
+
         /* Zona de publicidad */
 
         #columna-centrada{
@@ -137,7 +187,9 @@
         }
 
         #columna-centrada textarea{
-            max-width: 200px !important;
+            min-width: 180px !important;
+            min-height: 100px !important;
+            max-width: 200px;
         }
 
         /* Mensaje de error 404 */
@@ -228,6 +280,10 @@
     }
     #imageslider ul.slider li {
         background-position: -190px -50px !important;
+    }
+
+    #columna-centrada textarea{
+        max-width: 350px !important;
     }
 }
 
@@ -586,7 +642,44 @@ header{
 
     /* Zona de Descripción */
 
-    /* Zona de Ultimas ofertas */
+.desc-intro{
+    display: flex;
+    flex-flow: row;
+    margin: 0 auto;
+    width: 70%;
+}
+
+.desc-intro .imagen{
+    border-radius: 100%;
+    width: 40%;
+    padding: 20px;
+    flex: 1;
+}
+
+.desc-intro .imagen:nth-child(2n+1){
+    border: outset 2px #1eb101;
+}
+
+.desc-intro .imagen:nth-child(2n){
+    border: inset 2px #1eb101;
+}
+
+.desc-intro .imagen img{
+    width: 80%;
+}
+
+.desc-intro .texto{
+    flex: 5;
+}
+
+.desc-intro .texto h2{
+    margin-top: 10%;
+    font-size: 20px;
+}
+
+.desc-intro .texto span{
+    color: #1eb101;
+}
 
     /* Zona de Publicidad del inicio */
 
@@ -594,17 +687,32 @@ header{
     margin-top: 10%;
     height: 90%;
     width: 100%;
-    background-color: rgba(30, 177, 1, 0.30);
     border-radius: 5px;
 }
 
 #publi img{
     border-radius: 5px;
     width: 100%;
-    height: 100%;
+    height: 80%;
+    margin-top: 50%;
 }
 
     /* Zona de Perfil */
+
+#contenido-perfil h1{
+    text-align: center;
+    color: #1eb101;
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+#contenido-perfil .columna1{
+    flex: 1;
+}
+
+#contenido-perfil .columna2{
+    flex: 2;
+}
 
 #perfil{
     border-radius: 10px;
@@ -647,11 +755,11 @@ header{
 #filtrar{
     text-align: center;
     width: 20%;
-    border-radius: 0px 20px 20px 0px;
+    border-radius: 0px 20px 0px 0px;
     flex: 0.2;
     margin-top: 5%;
     margin-right: 2%;
-    background-color: rgba(144, 144, 144, 0.32);
+    background-color: rgba(218, 213, 213, 0.73);
     font-size: 17px;
     font-weight: bolder;
     height: auto;
@@ -723,6 +831,7 @@ header{
 
 #anos-slider span{
     margin-left: 7%;
+    font-size: 15px;
     font-style: italic;
 }
 
@@ -808,17 +917,61 @@ header{
 }
 
 #map-canvas{
-    height: 70% !important;
+    height: 50% !important;
     border-radius: 10px;
     box-shadow: #acacac 5px 5px 10px;
 }
 
     /* Zona de Contacto */
 
+#mapa-contacto{
+    margin: 12px;
+    height: 50%;
+    box-shadow: 5px 5px 5px rgba(158, 158, 158, 0.62);
+    border-radius: 10px;
+}
+
+#mapa-contacto iframe{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+#contacto #form-contacto{
+    width: 100%;
+}
+
+.exito{
+    width: 60%;
+    height: 10%;
+    margin: 0 auto;
+    background-color: rgba(68, 199, 103, 0.16);
+    text-align: center;
+    color: #1eb101;
+    font-size: 25px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #9b9b9b;
+}
+
+.exito span{
+    font-size: 60px;
+}
+
+.fracaso{
+    width: 70%;
+    height: 15%;
+    margin: 0 auto;
+    background-color: rgba(199, 38, 15, 0.16);
+    text-align: center;
+    color: #cb1711;
+    font-size: 25px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #9b9b9b;
+}
+
     /* Zona de Políticas de Cookies */
 
 .unica-columna{
-    display: table;
     margin-left: 5%;
     margin-right: 5%;
 }
@@ -881,10 +1034,25 @@ header{
     text-align: center;
     margin-top: 5px;
 }
+
+#form-contacto div{
+    margin-top: 10px;
+}
+
+.error{
+    display: none;
+    padding: 10px;
+    font-size: 20px;
+    color: rgb(203, 24, 19);
+}
+
     /* Zona del error 404 */
+
 
 #contenido-error{
     height: auto;
+    width: 100%;
+    display: table;
 }
 
 #contenido-error .columna1, #contenido-error .columna2{
@@ -906,12 +1074,12 @@ header{
 
 .imagenError{
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 
 /*************************************************************************************/
 
-/* Estilo del r */
+/* Estilo del footer */
 
 #footer{
     width: 100%;

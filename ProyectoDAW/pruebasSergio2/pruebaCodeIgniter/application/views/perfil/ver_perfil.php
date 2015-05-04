@@ -8,7 +8,7 @@
 ?>
 
     <!--Contenido general-->
-    <div id="contenido">
+    <div id="contenido-perfil">
         <h1>Mi Perfil</h1><!--Titulo de articulo-->
 
         <!--Descripción del sitio -->

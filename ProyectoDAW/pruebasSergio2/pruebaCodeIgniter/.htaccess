@@ -1,8 +1,14 @@
 Options +FollowSymLinks
 DirectoryIndex index.php
 RewriteEngine On
+
+AddDefaultCharset UTF-8
+DefaultLanguage es-Es
+
 RewriteBase /pruebaCodeIgniter
 RewriteCond $1 !^(index\.php|images|robots\.txt)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php/$1 [L]
+
+Options All -Indexes

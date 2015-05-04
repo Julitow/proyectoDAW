@@ -1,16 +1,9 @@
 
-/* Expresiones regulares */
+    /* Expresiones regulares */
 
-var expEmail = /^([a-zA-Z\-\d]+[.]*)+@([a-zA-Z\d]+[.]*)+\.([a-zA-Z]{2,4})$/;
+var expEmail = /^([a-zA-Z\-\d]+[.]*)+@([a-zA-Z\d]+[.]*)+\.([a-zA-Z]{2,})$/;
 var expTelefono = /^[6-9]\d{8}$/;
-
-/*
- if(exp.test(usuario)){
- alert("Usuario valido");
- }else{
- alert("Usuario NO valido");
- }
- */
+var expNombre = /^([a-zA-ZáéíóúñÁÉÍÓÚ]*)$/;
 
 /*************************************************************************************/
 
@@ -22,10 +15,8 @@ $(document).ready(function(){
                 $('#cookie').slideUp(1000, function(){politicas();});
     })
 
-    $(document).ready(function(){
-        $("video").on('ended', function(){
-            eliminarVideo();
-        });
+    $("video").on('ended', function(){
+        eliminarVideo();
     });
 
 });
@@ -200,5 +191,59 @@ $(function() {
     $('#fecha-filtro').buttonset();
 
 });
+
+/*************************************************************************************/
+
+/* Funciones para validar el formulario de publicidad y contacto */
+
+function formPubli(){
+    var nombre = document.getElementById('nombre');
+    var email = document.getElementById('email');
+    var comentarios = document.getElementById('comentarios');
+    var sol = false;
+
+    if(nombre.value==false){
+        nombre.focus();
+        document.getElementById('errornombre').style.display = "block";
+        document.getElementById('errornombre').innerHTML = "El Nombre no puede estar VACÍO!";
+        nombre.style.background = "rgba(203, 24, 19, 0.43)";
+    }else if(!expNombre.test(nombre.value)){
+        nombre.focus();
+        document.getElementById('errornombre').style.display = "block";
+        document.getElementById('errornombre').innerHTML = "El nombre NO puede tener números ni caracteres especiales";
+        nombre.style.background = "rgba(203, 24, 19, 0.43)";
+    }else if(email.value==false){
+        email.focus();
+        document.getElementById('erroremail').style.display = "block";
+        document.getElementById('erroremail').innerHTML = "El Email no puede estar VACÍO!";
+        email.style.background = "rgba(203, 24, 19, 0.43)";
+    }else if(!expEmail.test(email.value)){
+        email.focus();
+        document.getElementById('erroremail').style.display = "block";
+        document.getElementById('erroremail').innerHTML = "El email introducido NO ES VÁLIDO!";
+        email.style.background = "rgba(203, 24, 19, 0.43)";
+    }else if(comentarios.value==false){
+        comentarios.focus();
+        document.getElementById('errorcomentarios').style.display = "block";
+        document.getElementById('errorcomentarios').innerHTML = "Tiene que escribir algún comentario!";
+        comentarios.style.background = "rgba(203, 24, 19, 0.43)";
+    }else {
+        /* Cambiar "enter" por un "<br/>":
+            var value = document.getElementById('comentarios').value;
+            value = value.replace(/\n/g, "</br>");
+            document.getElementById('comentarios').value = value;
+        */
+        sol = true;
+    }
+    return sol;
+}
+
+function quitarError(elemento){
+    var error = "error"+elemento.name;
+    if(document.getElementById(error).style.display == "block"){
+        document.getElementById(error).style.display = "none";
+        elemento.style.background = "rgba(228, 228, 228, 0.64)";
+    }
+}
 
 /*************************************************************************************/

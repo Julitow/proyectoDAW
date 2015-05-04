@@ -8,6 +8,10 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 class PoliticasCookies extends CI_Controller{
 
+    function __construct(){
+        parent::__construct();
+    }
+
     public function index(){
 
         $data['title'] = "Políticas de Cookies";
