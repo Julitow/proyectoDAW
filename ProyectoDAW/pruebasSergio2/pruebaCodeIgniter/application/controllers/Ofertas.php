@@ -18,10 +18,43 @@ class Ofertas extends CI_Controller{
     // Funcion que muestra todas las ofertas
     public function index(){
 
-        $parametros['lista'] = $this->model_oferta->ver_ofertas();
         $parametros['numero'] = $this->model_oferta->contar_ofertas();
-
         $parametros['provincia'] = $this->model_provincia->ver_provincias();
+
+        $this->load->library('pagination'); //Cargar librería de paginación
+        $pages=1; //Número de registros mostrados por páginas
+        $config['base_url'] = base_url().'ofertas/'; // parámetro base de la aplicación, si tenemos un .htaccess nos evitamos el index.php
+        $config['total_rows'] = $this->model_oferta->contar_ofertas();//calcula el número de filas
+        $config['per_page'] = $pages; //Número de registros mostrados por páginas
+        $config['num_links'] = 2; //Número de links mostrados en la paginación (cuantos números queremos que se muestren)
+        $config["uri_segment"] = 2;//el segmento de la paginación
+
+        $config['cur_tag_open'] = '<b class="paginacion">'; //página actual
+        $config['cur_tag_close'] = '</b>';
+
+        $config['first_link'] = 'Primero';
+        $config['first_tag_open'] = '<div class="pag">';
+        $config['first_tag_close'] = '</div>';
+
+        $config['last_link'] = 'Último';
+        $config['last_tag_open'] = '<div class="pag">';
+        $config['last_tag_close'] = '</div>';
+
+        $config['next_link'] = '&#10095;';//siguiente link
+        $config['next_tag_open'] = '<div class="pag-2">';
+        $config['next_tag_close'] = '</div>';
+
+        $config['prev_link'] = '&#10094;';//anterior link
+        $config['prev_tag_open'] = '<div class="pag-2">';
+        $config['prev_tag_close'] = '</div>';
+
+        $config['num_tag_open'] = '<div class="paginacion">';
+        $config['num_tag_close'] = '</div>';
+
+        $config['full_tag_open'] = '<div id="paginacion">';
+        $config['full_tag_close'] = '</div>';
+        $this->pagination->initialize($config); //inicializamos la paginación
+        $parametros["ofertas"] = $this->model_oferta->total_paginados($config['per_page'], $this->uri->segment(2));
 
         $data['title'] = "Ofertas de Trabajo";
 

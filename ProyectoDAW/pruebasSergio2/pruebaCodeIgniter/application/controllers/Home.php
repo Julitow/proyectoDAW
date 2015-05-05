@@ -15,7 +15,7 @@ class Home extends CI_Controller {
     public function index($page = "home"){
 
         $this->load->model('model_oferta');
-        $parametros['lista'] = $this->model_oferta->ver_cuatro_ultimas_ofertas();
+        $parametros['lista'] = $this->model_oferta->ver_tres_ultimas_ofertas();
         // rand(min, max) --> generar un número aleatorio para que el banner publicitario cambie
         $parametros['publi'] = rand(1,6);
 

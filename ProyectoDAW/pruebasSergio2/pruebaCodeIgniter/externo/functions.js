@@ -3,7 +3,7 @@
 
 var expEmail = /^([a-zA-Z\-\d]+[.]*)+@([a-zA-Z\d]+[.]*)+\.([a-zA-Z]{2,})$/;
 var expTelefono = /^[6-9]\d{8}$/;
-var expNombre = /^([a-zA-ZáéíóúñÁÉÍÓÚ]*)$/;
+var expNombre = /^([a-zA-ZáéíóúñÑÁÉÍÓÚ]*)$/;
 
 /*************************************************************************************/
 
@@ -160,6 +160,22 @@ $('#menu-responsive').on(
 
 /*************************************************************************************/
 
+/* Funcion del filtrado en responsive */
+
+$('#filtrar-responsive .boton-2d').on(
+    'click', function () {
+        if($('#filtrar-responsive .boton-2d .ui-button-text').text()=="Ocultar"){
+            $('#filtrar-responsive .boton-2d .ui-button-text').text("Filtrar");
+        }else{
+            $('#filtrar-responsive .boton-2d .ui-button-text').text("Ocultar");
+        }
+        $('#filtrar form').css("background-color", "rgba(218, 213, 213, 0.73)");
+        $('#filtrar form').css("padding", "10px");
+        $('#filtrar form').toggle(1000);
+});
+
+/*************************************************************************************/
+
 /* Funcion del slider de imagenes */
 
 $(function(){
@@ -185,8 +201,6 @@ $(function() {
     });
 
     $('.boton-2d').button();
-
-    $('.select').selectmenu().selectmenu("menuWidget").addClass( "select" );
 
     $('#fecha-filtro').buttonset();
 

@@ -60,9 +60,6 @@
         width: 100%;
         height: 100%;
     }
-    #buscador{
-        display: none !important;
-    }
     /*************************************************************************************/
 
     /* Estilos para el slider de imágenes responsive */
@@ -121,6 +118,22 @@
         /* Ofertas */
 
         #filtrar{
+            background-color: transparent !important;
+        }
+
+        #filtrar-responsive{
+            display: block !important;
+        }
+
+        #filtrar-responsive .boton-2d{
+            width: 80px;
+        }
+
+        #filtrar form{
+            display: none;
+        }
+
+        #filtrar{
             display: table-cell;
         }
 
@@ -136,6 +149,14 @@
 
         #campos-oferta div span{
             font-size: 15px !important;
+        }
+
+        #paginacion{
+            width: 90% !important;
+        }
+
+        .paginacion, .pag>a{
+            font-size: 20px !important;
         }
 
         /* Descripcion de una oferta */
@@ -425,24 +446,6 @@ header{
 .logo a img{
     width: 30%;
     height: 100%;
-}
-
-#buscador{
-    width: 20%;
-    float: right;
-    display: inline;
-    margin-right: 5%;
-}
-
-#buscador #buscar{
-    margin-top: 3%;
-    width: 100%;
-    background: url("img/search.png") no-repeat;
-    background-size: 20% 100%;
-    border: 2px solid #1eb101;
-    border-radius: 10px;
-    padding: 3%;
-    text-indent: 20%;
 }
 
 /*************************************************************************************/
@@ -752,6 +755,10 @@ header{
 
     /* Zona de Ofertas */
 
+#filtrar-responsive{
+    display: none;
+}
+
 #filtrar{
     text-align: center;
     width: 20%;
@@ -801,7 +808,24 @@ header{
 }
 
 .select{
-    height: 200px !important;
+    width: auto;
+    height: 35px;
+    font-size: 14px;
+    padding: 0px;
+    border-radius: 6px;
+    border: 1px solid #FFF;
+    background: #44C767;
+    font-weight: bold;
+    color: #FFF;
+    font-family: segoe ui,Arial,sans-serif;
+    cursor: pointer;
+}
+
+.select:hover{
+    border: 1px solid #ffffff;
+    background: #878787;
+    font-weight: bold;
+    color: #ffffff;
 }
 
 .boton-2d{
@@ -880,6 +904,41 @@ header{
 
 .oferta p{
     padding: 20px;
+}
+
+#paginacion{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #1eb101;
+    margin: 0 auto;
+}
+
+.paginacion{
+    padding: 3px;
+    font-size: 20px;
+}
+
+.pag{
+    flex: 1;
+}
+
+.pag>a{
+    font-size: 20px;
+}
+
+.pag-2{
+    flex: 1;
+}
+
+.pag-2>a{
+    font-size: 30px;
+}
+
+.pag>a, .pag-2>a{
+    color: #1eb101;
 }
 
     /* Zona de la descripción de una oferta */

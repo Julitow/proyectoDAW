@@ -55,7 +55,7 @@
                 var geocoder;
                 var map;
                 // eliminar las tildes de las cadenas
-                var query="<?php echo $cliente->direccion?>, <?php echo $cliente->ciudad?>, <?php echo $cliente->provincia?>";// SPAIN";
+                var query="<?php echo $cliente->direccion?>, <?php echo $cliente->ciudad?>, <?php echo $cliente->provincia?>, SPAIN";
                 function initialize() {
                     geocoder = new google.maps.Geocoder();
                     var mapOptions = {

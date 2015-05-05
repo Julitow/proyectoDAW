@@ -22,7 +22,7 @@
 
 <div id="contenedor">
 
-    <header><!--Cabecera principal del sitio-->
+    <header>
 
         <div class="logo">
             <a href="<?php echo base_url() ?>">
@@ -32,9 +32,9 @@
 
         <div id="login">
             <div>
-                <img src="<?php echo base_url() ?>/externo/img/account.png" alt="foto_perfil"/> <!-- Imagen de perfil -->
-                <button class="acceder">Acceder</button>
-                <button class="registrar">Registrarse</button><!-- Botón con Registrarse / Botón con Cerrar Sesión -->
+                <img src="<?php echo base_url() ?>/externo/img/account.png" alt="foto_perfil"/><!-- Imagen de perfil -->
+                <button class="acceder">Acceder</button><!-- Botón con Iniciar Sesión / Botón con Cerrar Sesión -->
+                <button class="registrar">Registrarse</button><!-- Botón con Registrarse / Desaparce -->
             </div>
         </div>
 
@@ -42,15 +42,11 @@
 
     <span id="menu-responsive"><img src="<?php echo base_url() ?>/externo/img/menu.png"></span>
 
-    <nav id="menu"><!--Menu-->
+    <nav id="menu">
         <ul>
             <a href="<?php echo base_url() ?>"><li>Inicio</li></a>
             <a href="<?php echo base_url() ?>perfil"><li>Perfil</li></a>
             <a href="<?php echo base_url() ?>ofertas"><li>Ofertas</li></a>
             <a href="<?php echo base_url() ?>contacto"><li>Contacto</li></a>
-
-            <form id="buscador" name="buscador" method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>">
-                <input id="buscar" name="buscar" type="search" placeholder="Buscar..."/>
-            </form>
         </ul>
     </nav>

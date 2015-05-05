@@ -52,3 +52,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'home'; // Indica la página principal
 $route['404_override'] = 'error404'; // Indica la página que mostrará el error 404
 $route['translate_uri_dashes'] = FALSE; // BUSCAR ¿?
+
+$route['ofertas/(:num)'] = 'ofertas'; //cuando se avance página, redirige a la página inical de ofertas

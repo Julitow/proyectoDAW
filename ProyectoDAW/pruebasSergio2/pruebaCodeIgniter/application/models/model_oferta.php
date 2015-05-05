@@ -45,8 +45,18 @@ class Model_oferta extends CI_Model {
         return $resultado;
     }
 
+    function total_paginados($por_pagina,$segmento){
+        $consulta = $this->db->get('ofertas',$por_pagina,$segmento);
+        if($consulta->num_rows()>0){
+            foreach($consulta->result() as $fila){
+                $data[] = $fila;
+            }
+            return $data;
+        }
+    }
+
     // SELECT * FROM ofertas ORDER BY id DESC LIMIT 3;
-    public function ver_cuatro_ultimas_ofertas(){
+    public function ver_tres_ultimas_ofertas(){
 
         $this->db->select('*');
         $this->db->from('ofertas');

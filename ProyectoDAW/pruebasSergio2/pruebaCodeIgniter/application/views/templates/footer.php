@@ -5,7 +5,6 @@
  * Time: 10:40
  */
 ?>
-<!--Footer-->
     <footer id="footer">
         <div id="footer-columnas">
 
@@ -26,7 +25,7 @@
     </footer>
 
     <div id="cookie">
-        <div>Las cookies nos permiten ofrecer nuestros servicios. Al utilizar nuestros servicios, acepta el uso que hacemos de las cookies, en cumplimiento del Real Decreto-ley 13/2012. <a href="#">Más información</a></div>
+        <div>Las cookies nos permiten ofrecer nuestros servicios. Al utilizar nuestros servicios, acepta el uso que hacemos de las cookies, en cumplimiento del Real Decreto-ley 13/2012. <a href="<?php echo base_url() ?>politicasCookies">Más información</a></div>
         <button class="boton">Aceptar</button></div>
     </div>
 
